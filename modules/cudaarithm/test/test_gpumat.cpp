@@ -409,9 +409,9 @@ PARAM_TEST_CASE(GpuMat_LocateROI, cv::cuda::DeviceInfo, cv::Size, MatDepth, UseR
 
 CUDA_TEST_P(GpuMat_LocateROI, locateROI)
 {
-    Point ofsGold;
-    Size wholeSizeGold;
-    GpuMat src = createMat(size, depth, wholeSizeGold, ofsGold, useRoi);
+    Point ofsGold = Point2i(0, 0);
+    Size wholeSizeGold = size;
+    GpuMat src = createMat(size, depth, useRoi);
 
     Point ofs;
     Size wholeSize;
